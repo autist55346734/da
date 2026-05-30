@@ -1,0 +1,193 @@
+{
+  "topics": [
+    {
+      "id": 1,
+      "name": "📦 Переменные и типы данных",
+      "theory": "📖 *Что такое переменная?*\n\nПеременная — это «коробка» для хранения данных. В Python не нужно указывать тип — он определяется автоматически.\n\n📝 *Как создать переменную:*\n```python\nname = 'Анна'      # строка (str)\nage = 25           # целое число (int)\nheight = 1.65      # дробное число (float)\nis_student = True  # логический тип (bool)\n```\n\n🔍 *Как узнать тип переменной:*\n```python\nprint(type(age))     # <class 'int'>\nprint(type(name))    # <class 'str'>\n```\n\n💡 *Правила именования переменных:*\n• Используй буквы, цифры и знак подчеркивания `_`\n• Имя не может начинаться с цифры\n• Имена чувствительны к регистру (`name` и `Name` - разные переменные)\n• Используй понятные имена: `user_age`, а не `a`\n\n🎨 *Типы данных в Python:*\n\n| Тип | Описание | Пример |\n|-----|----------|--------|\n| `int` | Целые числа | `10, -5, 1000` |\n| `float` | Дробные числа | `3.14, 2.5, -0.5` |\n| `str` | Строки (текст) | `'Привет', \"Python\"` |\n| `bool` | Логический | `True, False` |\n| `list` | Список | `[1, 2, 3]` |\n| `dict` | Словарь | `{'name': 'Анна'}` |\n\n🔧 *Преобразование типов:*\n```python\nnumber = '123'\nprint(type(number))    # str\n\nnumber = int(number)   # преобразуем в int\nprint(type(number))    # int\n\n# Другие преобразования:\nstr(123)      # строка '123'\nfloat('3.14') # число 3.14\nint(3.99)     # 3 (просто отрезает дробную часть)\nbool(1)       # True\nbool(0)       # False\n```\n\n📌 *Математические операции:*\n\n| Оператор | Значение | Пример | Результат |\n|----------|----------|--------|-----------|\n| `+` | Сложение | `5 + 3` | `8` |\n| `-` | Вычитание | `5 - 3` | `2` |\n| `*` | Умножение | `5 * 3` | `15` |\n| `/` | Деление (float) | `5 / 2` | `2.5` |\n| `//` | Целочисленное деление | `5 // 2` | `2` |\n| `%` | Остаток от деления | `5 % 2` | `1` |\n| `**` | Возведение в степень | `5 ** 2` | `25` |\n\n✅ *Примеры правильного кода:*\n```python\nuser_name = 'Иван'          # ✅ понятное имя\ncount = 10                   # ✅ число\nprice = 99.99               # ✅ дробное\nis_active = True            # ✅ логический\ntotal = count + price       # ✅ сложение\n```\n\n❌ *Примеры неправильного кода:*\n```python\n2user = 'Петр'     # ❌ начинается с цифры\nuser-name = 'Анна' # ❌ дефис вместо _\nprint = 10         # ❌ переопределяем встроенную функцию\n```",
+      "tasks": [
+        "Создай переменную `city` со значением 'Москва' и выведи её на экран.",
+        "Создай три переменные: `name` (строка), `age` (целое число), `height` (дробное число). Выведи тип каждой переменной с помощью `type()`.",
+        "Объяви две переменные `a = 10` и `b = 3`. Выведи результат сложения, вычитания, умножения, деления, целочисленного деления, остатка и степени.",
+        "Создай строковую переменную `number = '456'` и преобразуй её в целое число, затем умножь на 2 и выведи результат.",
+        "Найди и исправь ошибки в коде: `1name = 'John'`, `print(1name)`, `user-age = 25`, `print user-age`.",
+        "Создай переменные для хранения: твоего имени, возраста, роста (в метрах), студент ли ты. Выведи их все.",
+        "Посчитай площадь прямоугольника со сторонами 5 и 7, сохрани результат в переменную и выведи.",
+        "Создай переменную `celsius = 25` и переведи её в Фаренгейты по формуле: `fahrenheit = celsius * 9/5 + 32`. Выведи результат.",
+        "Создай переменную `radius = 5` и вычисли площадь круга: `area = 3.14159 * radius ** 2`. Выведи результат.",
+        "Поменяй значения двух переменных `x = 5` и `y = 10` местами без использования третьей переменной."
+      ]
+    },
+    {
+      "id": 2,
+      "name": "🎯 Условные операторы (if-elif-else)",
+      "theory": "🎯 *Условные операторы* позволяют программе принимать решения в зависимости от условий.\n\n📝 *Базовый синтаксис if-else:*\n```python\nif условие:\n    # действие если условие истинно\nelse:\n    # действие если условие ложно\n```\n\n🔍 *Пример с возрастом:*\n```python\nage = 18\nif age >= 18:\n    print('Доступ разрешен')\nelse:\n    print('Доступ запрещен')\n```\n\n📊 *Операторы сравнения:*\n\n| Оператор | Значение | Пример | Результат |\n|----------|----------|--------|-----------|\n| `==` | равно | `5 == 5` | `True` |\n| `!=` | не равно | `5 != 3` | `True` |\n| `>` | больше | `10 > 5` | `True` |\n| `<` | меньше | `3 < 7` | `True` |\n| `>=` | больше или равно | `5 >= 5` | `True` |\n| `<=` | меньше или равно | `4 <= 5` | `True` |\n\n🎨 *Логические операторы:*\n\n| Оператор | Значение | Пример | Результат |\n|----------|----------|--------|-----------|\n| `and` | И (оба условия) | `True and True` | `True` |\n| `or` | ИЛИ (хотя бы одно) | `True or False` | `True` |\n| `not` | НЕ (отрицание) | `not True` | `False` |\n\n📝 *Пример с несколькими условиями (elif):*\n```python\nscore = 85\nif score >= 90:\n    print('Отлично! 5')\nelif score >= 75:\n    print('Хорошо! 4')\nelif score >= 60:\n    print('Удовлетворительно! 3')\nelse:\n    print('Нужно подучить! 2')\n```\n\n🔧 *Сложные условия:*\n```python\nage = 20\nhas_license = True\n\nif age >= 18 and has_license:\n    print('Можно водить машину')\nelse:\n    print('Нельзя водить')\n\n# Тернарный оператор (короткая запись)\nstatus = 'Взрослый' if age >= 18 else 'Ребенок'\nprint(status)\n```\n\n📌 *Проверка вхождения:*\n```python\n# in - проверяет наличие элемента\nfruits = ['яблоко', 'банан', 'апельсин']\nif 'банан' in fruits:\n    print('Банан есть!')\n\n# is - проверяет идентичность объектов\nx = None\nif x is None:\n    print('x равен None')\n```\n\n✅ *Примеры:*\n```python\n# Проверка четности\nnumber = 7\nif number % 2 == 0:\n    print('Четное')\nelse:\n    print('Нечетное')\n\n# Проверка ввода\ntemperature = int(input('Какая температура? '))\nif temperature > 30:\n    print('Очень жарко! 🌞')\nelif temperature > 20:\n    print('Тепло 😎')\nelif temperature > 10:\n    print('Прохладно 🧥')\nelse:\n    print('Холодно! ❄️')\n\n# Калькулятор\na = 10\nb = 5\noperator = '+'\nif operator == '+':\n    print(a + b)\nelif operator == '-':\n    print(a - b)\nelif operator == '*':\n    print(a * b)\nelif operator == '/':\n    print(a / b)\nelse:\n    print('Неизвестный оператор')\n```\n\n❌ *Ошибки начинающих:*\n```python\n# ❌ Неправильно\nif x = 5:     # должно быть ==\n    print('x равно 5')\n\n# ❌ Неправильно\nif x > 5     # забыли двоеточие\n    print('x больше 5')\n\n# ❌ Неправильно\nif x > 5:\nprint('Больше') # нет отступа\n```",
+      "tasks": [
+        "Проверь число `x = 15`: если `x > 10`, выведи 'Больше 10', иначе 'Меньше или равно 10'.",
+        "Создай программу, которая запрашивает возраст пользователя через `input()` и выводит: 'Доступ разрешен' если возраст >= 18, иначе 'Доступ запрещен'.",
+        "Напиши код для проверки четности числа. Если число четное, выведи 'Четное', иначе 'Нечетное'.",
+        "Запроси у пользователя его оценку (число от 0 до 100). Выведи: 'Отлично' (90+), 'Хорошо' (75+), 'Удовлетворительно' (60+), 'Нужно учить' (меньше 60).",
+        "Попроси пользователя ввести число. Если число положительное, выведи 'Положительное', если отрицательное - 'Отрицательное', если ноль - 'Ноль'.",
+        "Напиши программу, которая проверяет, является ли год високосным. (Год високосный, если делится на 4, но не на 100, или делится на 400).",
+        "Создай простой калькулятор: запроси два числа и оператор (+, -, *, /). Выведи результат.",
+        "Попроси пользователя ввести пароль. Если пароль 'python123', выведи 'Доступ разрешен', иначе 'Доступ запрещен'.",
+        "Напиши программу, которая определяет максимальное из трёх чисел, введённых пользователем.",
+        "Создай игру: программа загадывает число (например, 7). Пользователь вводит число. Если угадал - 'Поздравляю!', если нет - 'Попробуй еще раз'."
+      ]
+    },
+    {
+      "id": 3,
+      "name": "🔄 Циклы: for и while",
+      "theory": "🔄 *Циклы* позволяют выполнять один и тот же код много раз.\n\n📝 *Цикл for* — используется когда знаешь сколько раз нужно повторить:\n```python\n# Перебор диапазона чисел\nfor i in range(5):    # 0, 1, 2, 3, 4\n    print(i)\n\n# От 1 до 10\nfor i in range(1, 11):\n    print(i)\n\n# С шагом 2\nfor i in range(0, 10, 2):  # 0, 2, 4, 6, 8\n    print(i)\n\n# Обратный порядок\nfor i in range(10, 0, -1):  # 10, 9, 8, ..., 1\n    print(i)\n\n# Перебор списка\nfruits = ['яблоко', 'банан', 'апельсин']\nfor fruit in fruits:\n    print(fruit)\n\n# Перебор строки\nfor letter in 'Python':\n    print(letter)  # P, y, t, h, o, n\n```\n\n📝 *Цикл while* — выполняется пока условие истинно:\n```python\ncount = 0\nwhile count < 5:\n    print(count)\n    count += 1\n\n# Бесконечный цикл (нужен break для выхода)\nwhile True:\n    command = input('Введите команду: ')\n    if command == 'exit':\n        break\n    print(f'Вы ввели: {command}')\n```\n\n🔧 *Управление циклами:*\n\n| Команда | Что делает | Пример |\n|---------|------------|--------|\n| `break` | Прерывает цикл полностью | `if i == 5: break` |\n| `continue` | Переходит к следующей итерации | `if i == 5: continue` |\n| `else` | Выполняется если цикл завершился не по break | `for i in range(3): ... else: ...` |\n\n📝 *Примеры с break и continue:*\n```python\n# break - выход из цикла\nfor i in range(10):\n    if i == 5:\n        break\n    print(i)  # 0,1,2,3,4\n\n# continue - пропуск итерации\nfor i in range(5):\n    if i == 2:\n        continue\n    print(i)  # 0,1,3,4\n\n# else с циклом\nfor i in range(3):\n    print(i)\nelse:\n    print('Цикл завершен!')  # выполнится всегда\n\n# else НЕ выполнится при break\nfor i in range(10):\n    if i == 5:\n        break\n    print(i)\nelse:\n    print('Не выполнится')\n```\n\n📌 *Вложенные циклы:*\n```python\n# Таблица умножения\nfor i in range(1, 4):\n    for j in range(1, 4):\n        print(f'{i} × {j} = {i*j}')\n    print('---')\n\n# Поиск пар\nfor i in range(3):\n    for j in range(3):\n        print(f'({i}, {j})')\n```\n\n🎯 *Практические примеры:*\n```python\n# Сумма чисел от 1 до 100\ntotal = 0\nfor i in range(1, 101):\n    total += i\nprint(f'Сумма: {total}')  # 5050\n\n# Поиск простого числа\nnum = 17\nis_prime = True\nfor i in range(2, num):\n    if num % i == 0:\n        is_prime = False\n        break\nprint('Простое' if is_prime else 'Не простое')\n\n# Факториал\nn = 5\nfactorial = 1\nfor i in range(1, n + 1):\n    factorial *= i\nprint(f'Факториал {n} = {factorial}')  # 120\n\n# Числа Фибоначчи\na, b = 0, 1\nfor i in range(10):\n    print(a, end=' ')\n    a, b = b, a + b  # 0 1 1 2 3 5 8 13 21 34\n\n# Сумма цифр числа\nnum = 12345\nsum_digits = 0\nwhile num > 0:\n    sum_digits += num % 10\n    num //= 10\nprint(f'Сумма цифр: {sum_digits}')  # 15\n\n# Обратный порядок строки\ntext = 'Python'\nreversed_text = ''\nfor char in text:\n    reversed_text = char + reversed_text\nprint(reversed_text)  # 'nohtyP'\n```\n\n⚠️ *Ошибки начинающих:*\n```python\n# ❌ Бесконечный цикл\ncount = 0\nwhile count < 10:\n    print(count)  # забыли count += 1\n\n# ❌ Неправильный синтаксис\nfor i in range(10)  # забыли двоеточие\n    print(i)\n\n# ❌ Изменение списка при итерации\nnumbers = [1, 2, 3, 4]\nfor n in numbers:\n    if n % 2 == 0:\n        numbers.remove(n)  # ОПАСНО!\n\n# ✅ Правильно\nnumbers = [1, 2, 3, 4]\nnumbers = [n for n in numbers if n % 2 != 0]  # создаём новый список\n```\n\n💡 *Когда какой цикл использовать:*\n- `for` — когда знаешь количество повторений\n- `while` — когда количество повторений неизвестно\n- `for` лучше для перебора коллекций\n- `while` лучше для ожидания условия\n\n📊 *Математические формулы с циклами:*\n```python\n# Сумма арифметической прогрессии\n# S = n * (a1 + an) / 2\nn = 100\na1 = 1\nan = 100\nsum_arith = n * (a1 + an) // 2\nprint(sum_arith)  # 5050\n\n# Сумма квадратов: 1² + 2² + ... + n²\nn = 10\nsum_squares = sum(i**2 for i in range(1, n+1))\nprint(sum_squares)  # 385\n\n# Произведение чисел от 1 до n (факториал)\nimport math\nfact = math.factorial(5)  # 120\n```",
+      "tasks": [
+        "Выведи числа от 1 до 10 используя цикл `for`.",
+        "Выведи числа от 10 до 1 в обратном порядке используя цикл `while`.",
+        "Найди сумму всех чисел от 1 до 100.",
+        "Выведи все чётные числа от 1 до 20.",
+        "Выведи таблицу умножения на 5 (5×1=5, 5×2=10... 5×10=50).",
+        "Напиши программу, которая запрашивает числа, пока пользователь не введёт 0, и выводит их сумму.",
+        "Найди факториал числа 10 (10! = 10×9×8×...×1).",
+        "Выведи первые 10 чисел Фибоначчи (1, 1, 2, 3, 5, 8, 13, 21, 34, 55).",
+        "Посчитай количество цифр в числе 12345.",
+        "Выведи все простые числа от 1 до 50.",
+        "Найди сумму всех нечётных чисел от 1 до 50.",
+        "Создай пирамидку из звёздочек высотой 5:\n*\n**\n***\n****\n*****",
+        "Напиши программу, которая переворачивает строку 'Python'.",
+        "Посчитай, сколько раз буква 'a' встречается в строке 'abracadabra'.",
+        "Найди наибольший общий делитель (НОД) двух чисел 48 и 18 (алгоритм Евклида)."
+      ]
+    },
+    {
+      "id": 4,
+      "name": "📝 Списки (list)",
+      "theory": "📝 *Списки* — это коллекции, которые хранят несколько элементов в одном месте. Они изменяемы (можно добавлять, удалять, изменять элементы).\n\n📌 *Создание списков:*\n```python\nempty = []                           # пустой список\nnumbers = [1, 2, 3, 4, 5]           # список чисел\nfruits = ['яблоко', 'банан', 'апельсин']  # список строк\nmixed = [1, 'два', 3.0, True]        # смешанный список\nnested = [[1, 2], [3, 4]]            # вложенный список\n```\n\n🔍 *Доступ к элементам (индексация):*\n```python\nfruits = ['яблоко', 'банан', 'апельсин']\nprint(fruits[0])   # 'яблоко' (индексация с 0)\nprint(fruits[1])   # 'банан'\nprint(fruits[-1])  # 'апельсин' (отрицательный индекс - с конца)\nprint(fruits[-2])  # 'банан'\n```\n\n✏️ *Изменение элементов:*\n```python\nfruits = ['яблоко', 'банан', 'апельсин']\nfruits[1] = 'груша'          # замена элемента\nprint(fruits)                # ['яблоко', 'груша', 'апельсин']\n\n# Добавление элементов\nfruits.append('киви')        # в конец\nfruits.insert(1, 'манго')    # на позицию 1\nfruits.extend(['ананас', 'манго'])  # расширение списком (объединение)\n```\n\n🗑️ *Удаление элементов:*\n```python\nfruits = ['яблоко', 'банан', 'апельсин', 'банан']\nfruits.remove('банан')       # удаляет первый найденный\nlast = fruits.pop()          # удаляет и возвращает последний\nitem = fruits.pop(0)         # удаляет и возвращает элемент по индексу\ndel fruits[0]                # удаляет элемент по индексу\nfruits.clear()               # очищает весь список\n```\n\n🔧 *Полезные методы списков:*\n```python\nnumbers = [3, 1, 4, 1, 5, 9, 2]\n\nnumbers.append(2)           # [3, 1, 4, 1, 5, 9, 2, 2]\nnumbers.sort()              # [1, 1, 2, 2, 3, 4, 5, 9]\nnumbers.sort(reverse=True)  # [9, 5, 4, 3, 2, 2, 1, 1]\nnumbers.reverse()           # разворот\nnumbers.index(4)            # 2 (индекс первого 4)\nnumbers.count(1)            # 2 (сколько раз встречается 1)\nlen(numbers)                # 8 (длина списка)\nnumbers_copy = numbers.copy()  # копия списка\n```\n\n🔄 *Срезы (slices):*\n```python\nnumbers = [10, 20, 30, 40, 50, 60, 70]\n\n# Синтаксис: [start:stop:step]\nprint(numbers[0:3])    # [10, 20, 30] (от 0 до 3 не включая 3)\nprint(numbers[2:5])    # [30, 40, 50]\nprint(numbers[:4])     # [10, 20, 30, 40] (от начала до 4)\nprint(numbers[3:])     # [40, 50, 60, 70] (от 3 до конца)\nprint(numbers[::2])    # [10, 30, 50, 70] (каждый второй)\nprint(numbers[1::2])   # [20, 40, 60] (каждый второй, начиная с 1)\nprint(numbers[::-1])   # [70, 60, 50, 40, 30, 20, 10] (разворот)\n```\n\n🎯 *Перебор списков:*\n```python\nfruits = ['яблоко', 'банан', 'апельсин']\n\n# Простой перебор\nfor fruit in fruits:\n    print(fruit)\n\n# С индексом\nfor i in range(len(fruits)):\n    print(f'{i}: {fruits[i]}')\n\n# Элегантный способ с индексом (enumerate)\nfor i, fruit in enumerate(fruits):\n    print(f'{i}: {fruit}')\n\n# Перебор с условием\nfor fruit in fruits:\n    if fruit.startswith('а'):\n        print(fruit)\n```\n\n📝 *Генераторы списков (list comprehension):*\n```python\n# Классический способ\nsquares = []\nfor i in range(10):\n    squares.append(i**2)\n\n# То же самое через генератор списков\nsquares = [i**2 for i in range(10)]  # [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]\n\n# С условием\nevens = [i for i in range(20) if i % 2 == 0]  # [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]\n\n# Сложный пример\ndoubles = [x*2 for x in range(5)]  # [0, 2, 4, 6, 8]\n\n# Вложенный генератор\nmatrix = [[j for j in range(3)] for i in range(3)]  # [[0,1,2],[0,1,2],[0,1,2]]\n```\n\n📌 *Проверка наличия элемента:*\n```python\nfruits = ['яблоко', 'банан', 'апельсин']\nif 'банан' in fruits:\n    print('Банан есть в списке!')\n\nif 'груша' not in fruits:\n    print('Груши нет в списке')\n```\n\n🔗 *Объединение и повторение списков:*\n```python\nlist1 = [1, 2, 3]\nlist2 = [4, 5, 6]\n\n# Объединение\ncombined = list1 + list2  # [1, 2, 3, 4, 5, 6]\n\n# Повторение\nrepeated = list1 * 3      # [1, 2, 3, 1, 2, 3, 1, 2, 3]\n```\n\n📊 *Практические примеры:*\n```python\n# Удаление дубликатов\nnumbers = [1, 2, 2, 3, 3, 3, 4]\nunique = list(set(numbers))  # [1, 2, 3, 4]\n\n# Поиск максимального\nnumbers = [5, 2, 8, 1, 9]\nmax_num = max(numbers)   # 9\nmin_num = min(numbers)   # 1\nsum_num = sum(numbers)   # 25\n\n# Обратный порядок\nreversed_list = numbers[::-1]\n\n# Сортировка\nsorted_list = sorted(numbers)  # [1, 2, 5, 8, 9]\n\n# Фильтрация\nbig_numbers = [n for n in numbers if n > 3]  # [5, 8, 9]\n```\n\n⚠️ *Ошибки начинающих:*\n```python\n# ❌ Копирование списка\nlist1 = [1, 2, 3]\nlist2 = list1    # это не копия, а ссылка!\nlist2.append(4)\nprint(list1)     # [1, 2, 3, 4] - изменился исходный!\n\n# ✅ Правильное копирование\nlist2 = list1.copy()\nlist2 = list1[:]\nlist2 = list(list1)\n\n# ❌ Изменение списка во время итерации\nnumbers = [1, 2, 3, 4, 5, 6]\nfor n in numbers:\n    if n % 2 == 0:\n        numbers.remove(n)  # ПРОБЛЕМА!\n\n# ✅ Правильно (создаём новый список)\nnumbers = [n for n in numbers if n % 2 != 0]\n\n# ❌ Выход за границы списка\nnumbers = [1, 2, 3]\nprint(numbers[3])  # IndexError\n```\n\n💡 *Полезные функции для списков:*\n```python\nnumbers = [1, 2, 3, 4, 5]\nprint(min(numbers))    # 1\nprint(max(numbers))    # 5\nprint(sum(numbers))    # 15\nprint(sorted(numbers, reverse=True))  # [5, 4, 3, 2, 1]\nprint(list(reversed(numbers)))  # [5, 4, 3, 2, 1]\nprint(len(numbers))    # 5\n```",
+      "tasks": [
+        "Создай список из 5 любимых фильмов и выведи его на экран.",
+        "Добавь новый фильм в конец списка, затем замени второй фильм на другой.",
+        "Выведи первый, последний и третий элемент списка.",
+        "Создай список чисел от 1 до 10 и выведи только чётные числа из него.",
+        "Найди сумму всех чисел в списке [5, 10, 15, 20, 25].",
+        "Создай список строк и выведи его в обратном порядке.",
+        "Попроси пользователя ввести 5 чисел, добавь их в список и выведи максимальное число.",
+        "Создай список ['a', 'b', 'c']. Сделай из него строку 'a,b,c' с помощью join().",
+        "Напиши программу, которая удаляет дубликаты из списка [1, 2, 2, 3, 3, 3, 4].",
+        "Создай список случайных чисел от 1 до 100 (10 чисел) и выведи их в отсортированном порядке.",
+        "Найди второй по величине элемент в списке [5, 8, 2, 10, 3].",
+        "Раздели список [1, 2, 3, 4, 5, 6] на два списка: чётные и нечётные числа.",
+        "Создай список квадратов чисел от 1 до 10 с помощью генератора списков.",
+        "Проверь, является ли список [1, 2, 3, 2, 1] палиндромом (читается одинаково слева и справа).",
+        "Создай список из 10 нулей тремя разными способами.",
+        "Напиши программу, которая перемешивает список [1, 2, 3, 4, 5] в случайном порядке.",
+        "Создай список списков (матрицу) 3x3 и выведи её в виде таблицы.",
+        "Найди общие элементы в двух списках: [1, 2, 3, 4] и [3, 4, 5, 6].",
+        "Разверни список [1, 2, 3, 4, 5] двумя разными способами.",
+        "Подсчитай частоту каждого элемента в списке ['a', 'b', 'a', 'c', 'b', 'a']."
+      ]
+    },
+    {
+      "id": 5,
+      "name": "📚 Словари (dict)",
+      "theory": "📚 *Словари* хранят данные в виде пар «ключ — значение». Это как телефонная книга: по имени (ключу) находишь номер (значение).\n\n📝 *Создание словарей:*\n```python\n# Пустой словарь\nempty = {}\n\n# Словарь с данными\nuser = {\n    'name': 'Анна',\n    'age': 25,\n    'city': 'Москва'\n}\n\n# Через функцию dict()\nuser2 = dict(name='Петр', age=30, city='СПБ')\n```\n\n🔍 *Доступ к значениям:*\n```python\nuser = {'name': 'Анна', 'age': 25, 'city': 'Москва'}\n\nprint(user['name'])        # 'Анна'\nprint(user['age'])         # 25\n\n# Безопасный доступ (если ключа нет, вернёт None или значение по умолчанию)\nprint(user.get('email'))           # None\nprint(user.get('email', 'нет'))    # 'нет'\n```\n\n✏️ *Изменение и добавление:*\n```python\nuser = {'name': 'Анна', 'age': 25}\n\n# Изменение значения\nuser['age'] = 26\n\n# Добавление новой пары\nuser['city'] = 'Москва'\nuser['email'] = 'anna@mail.ru'\n\nprint(user)  # {'name': 'Анна', 'age': 26, 'city': 'Москва', 'email': 'anna@mail.ru'}\n```\n\n🗑️ *Удаление элементов:*\n```python\nuser = {'name': 'Анна', 'age': 25, 'city': 'Москва'}\n\n# Удаление по ключу\ndel user['city']\n\n# Удаление с возвратом значения\nage = user.pop('age')      # 25\n\n# Удаление последнего элемента\nitem = user.popitem()      # ('name', 'Анна')\n\n# Очистка словаря\nuser.clear()\n```\n\n🔧 *Методы словарей:*\n```python\nuser = {'name': 'Анна', 'age': 25, 'city': 'Москва'}\n\n# Все ключи\nkeys = user.keys()        # dict_keys(['name', 'age', 'city'])\n\n# Все значения\nvalues = user.values()    # dict_values(['Анна', 25, 'Москва'])\n\n# Пары ключ-значение\nitems = user.items()      # dict_items([('name', 'Анна'), ('age', 25), ('city', 'Москва')])\n\n# Объединение словарей\nuser2 = {'country': 'Россия', 'email': 'anna@mail.ru'}\nuser.update(user2)        # добавляет все пары из user2\n\n# Копирование\nuser_copy = user.copy()   # копия словаря\n```\n\n🔄 *Перебор словаря:*\n```python\nuser = {'name': 'Анна', 'age': 25, 'city': 'Москва'}\n\n# По ключам\nfor key in user:\n    print(f'{key}: {user[key]}')\n\n# По ключам (явно)\nfor key in user.keys():\n    print(key)\n\n# По значениям\nfor value in user.values():\n    print(value)\n\n# По парам\nfor key, value in user.items():\n    print(f'{key} = {value}')\n```\n\n📊 *Проверка наличия ключа:*\n```python\nuser = {'name': 'Анна', 'age': 25}\n\nif 'name' in user:\n    print('Имя есть в словаре')\n\nif 'phone' not in user:\n    print('Телефона нет')\n```\n\n🎯 *Практические примеры:*\n```python\n# Счётчик слов\nword = 'hello world hello python world hello'\nwords = word.split()\ncounter = {}\n\nfor w in words:\n    counter[w] = counter.get(w, 0) + 1\n\nprint(counter)  # {'hello': 3, 'world': 2, 'python': 1}\n\n# Телефонная книга\nphone_book = {}\nphone_book['Анна'] = '555-1234'\nphone_book['Петр'] = '555-5678'\nphone_book['Мария'] = '555-9012'\n\nprint(phone_book['Анна'])    # '555-1234'\nprint(phone_book.get('Иван', 'Не найден'))  # 'Не найден'\n\n# Вложенный словарь\nstudents = {\n    'student1': {\n        'name': 'Анна',\n        'grades': [5, 4, 5, 5],\n        'avg': 4.75\n    },\n    'student2': {\n        'name': 'Петр',\n        'grades': [4, 4, 3, 5],\n        'avg': 4.0\n    },\n    'student3': {\n        'name': 'Мария',\n        'grades': [5, 5, 5, 4],\n        'avg': 4.75\n    }\n}\n\n# Доступ к вложенным данным\nprint(students['student1']['name'])      # 'Анна'\nprint(students['student1']['grades'])    # [5, 4, 5, 5]\nprint(students['student1']['avg'])       # 4.75\n\n# Перебор вложенного словаря\nfor student_id, info in students.items():\n    print(f\"{student_id}: {info['name']}, средний балл: {info['avg']}\")\n```\n\n📝 *Генераторы словарей (dict comprehension):*\n```python\n# Создание словаря квадратов\nsquares = {x: x**2 for x in range(5)}\nprint(squares)  # {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}\n\n# Фильтрация\neven_squares = {x: x**2 for x in range(10) if x % 2 == 0}\nprint(even_squares)  # {0: 0, 2: 4, 4: 16, 6: 36, 8: 64}\n\n# Из двух списков\nkeys = ['a', 'b', 'c']\nvalues = [1, 2, 3]\ndictionary = {k: v for k, v in zip(keys, values)}\nprint(dictionary)  # {'a': 1, 'b': 2, 'c': 3}\n\n# Инвертирование словаря\noriginal = {'a': 1, 'b': 2, 'c': 3}\ninverted = {v: k for k, v in original.items()}\nprint(inverted)  # {1: 'a', 2: 'b', 3: 'c'}\n```\n\n💡 *Объединение словарей:*\n```python\ndict1 = {'a': 1, 'b': 2}\ndict2 = {'c': 3, 'd': 4}\n\n# Python 3.5+\ncombined = {**dict1, **dict2}  # {'a': 1, 'b': 2, 'c': 3, 'd': 4}\n\n# Python 3.9+\ncombined = dict1 | dict2       # {'a': 1, 'b': 2, 'c': 3, 'd': 4}\n\n# update метод\ndict1.update(dict2)\nprint(dict1)  # {'a': 1, 'b': 2, 'c': 3, 'd': 4}\n```\n\n📊 *Полезные операции со словарями:*\n```python\n# Сортировка по ключам\nuser = {'name': 'Анна', 'age': 25, 'city': 'Москва'}\nsorted_by_keys = dict(sorted(user.items()))\nprint(sorted_by_keys)  # {'age': 25, 'city': 'Москва', 'name': 'Анна'}\n\n# Сортировка по значениям\nsorted_by_values = dict(sorted(user.items(), key=lambda x: x[1]))\nprint(sorted_by_values)  # {'age': 25, 'city': 'Москва', 'name': 'Анна'}\n\n# Поиск ключа по значению\ndef find_key(dict_obj, value):\n    for k, v in dict_obj.items():\n        if v == value:\n            return k\n    return None\n\nprint(find_key(user, 'Москва'))  # 'city'\n```\n\n⚠️ *Ошибки начинающих:*\n```python\n# ❌ Обращение к несуществующему ключу\nuser = {'name': 'Анна'}\nprint(user['age'])  # KeyError!\n\n# ✅ Используйте get\nprint(user.get('age', 'не указан'))  # 'не указан'\n\n# ❌ Изменение словаря во время итерации\nuser = {'a': 1, 'b': 2, 'c': 3}\nfor key in user:\n    if key == 'b':\n        del user[key]  # Ошибка!\n\n# ✅ Правильно\nkeys_to_delete = ['b']\nfor key in keys_to_delete:\n    if key in user:\n        del user[key]\n\n# ❌ Использование изменяемого типа как ключа\n# bad_dict = {[1, 2]: 'value'}  # TypeError! Список нельзя использовать как ключ\n\n# ✅ Можно использовать кортеж (неизменяемый)\ngood_dict = {(1, 2): 'value'}  # OK\n```\n\n💡 *Когда использовать словари:*\n- Когда нужен быстрый доступ по ключу\n- Для хранения связанных данных (профиль пользователя)\n- Для подсчёта частоты элементов\n- Для кэширования результатов\n- Для представления JSON данных",
+      "tasks": [
+        "Создай словарь с информацией о себе: имя, возраст, город.",
+        "Выведи на экран возраст из словаря.",
+        "Добавь в словарь новую пару: хобби.",
+        "Измени возраст на другой и выведи обновлённый словарь.",
+        "Создай словарь телефонной книги с 3 контактами и выведи номер одного из них.",
+        "Напиши программу, которая считает количество каждого символа в строке 'hello world'.",
+        "Создай словарь с оценками студентов и найди средний балл.",
+        "Проверь, есть ли ключ 'city' в словаре {'name': 'Анна', 'age': 25}.",
+        "Объедини два словаря: {'a': 1, 'b': 2} и {'c': 3, 'd': 4}.",
+        "Создай словарь квадратов чисел от 1 до 5 с помощью генератора словарей.",
+        "Переверни словарь {'a': 1, 'b': 2, 'c': 3} (меняем ключи и значения местами).",
+        "Напиши программу, которая группирует слова по первой букве: ['apple', 'apricot', 'banana', 'blueberry'].",
+        "Создай вложенный словарь для 3 учеников с их оценками.",
+        "Найди ключ с максимальным значением в словаре {'a': 10, 'b': 25, 'c': 15}.",
+        "Удали ключ 'b' из словаря {'a': 1, 'b': 2, 'c': 3} двумя разными способами.",
+        "Создай словарь из двух списков: keys = ['name', 'age', 'city'] и values = ['Анна', 25, 'Москва'].",
+        "Напиши программу, которая преобразует список чисел в словарь: число → количество его вхождений.",
+        "Создай словарь с датами рождения друзей и выведи тех, у кого день рождения в мае.",
+        "Используя словарь, переведи число из римской системы в арабскую: 'XIV' → 14.",
+        "Создай систему управления контактами: добавление, удаление, поиск, вывод всех контактов."
+      ]
+    },
+    {
+      "id": 6,
+      "name": "🔧 Функции",
+      "theory": "🔧 *Функции* — это маленькие программы внутри большой программы. Они помогают не повторять один и тот же код.\n\n📝 *Создание и вызов функции:*\n```python\n# Определение функции\ndef greet():\n    print('Привет, мир!')\n\n# Вызов функции\ngreet()  # 'Привет, мир!'\n```\n\n📊 *Функции с параметрами:*\n```python\ndef greet(name):\n    print(f'Привет, {name}!')\n\ngreet('Анна')   # 'Привет, Анна!'\ngreet('Петр')   # 'Привет, Петр!'\n\n# Несколько параметров\ndef add(a, b):\n    result = a + b\n    print(f'{a} + {b} = {result}')\n\nadd(3, 5)  # 3 + 5 = 8\n```\n\n📤 *Возврат значения (return):*\n```python\ndef add(a, b):\n    return a + b\n\nresult = add(3, 5)\nprint(result)  # 8\n\n# Функция без return возвращает None\nresult = print('hello')\nprint(result)  # None\n\n# return прерывает выполнение функции\ndef check_age(age):\n    if age < 0:\n        return 'Ошибка: возраст не может быть отрицательным'\n    if age >= 18:\n        return 'Доступ разрешен'\n    return 'Доступ запрещен'\n```\n\n🔧 *Параметры по умолчанию:*\n```python\ndef greet(name='Гость'):\n    print(f'Привет, {name}!')\n\ngreet('Анна')  # 'Привет, Анна!'\ngreet()        # 'Привет, Гость!'\n\n# Несколько параметров по умолчанию\ndef power(base, exponent=2):\n    return base ** exponent\n\nprint(power(5))      # 25 (5²)\nprint(power(5, 3))   # 125 (5³)\n```\n\n📌 *Именованные аргументы:*\n```python\ndef info(name, age, city):\n    print(f'{name}, {age} лет, живет в {city}')\n\n# Позиционные аргументы\ninfo('Анна', 25, 'Москва')\n\n# Именованные аргументы (порядок не важен)\ninfo(city='СПБ', name='Петр', age=30)\n\n# Смешивание (сначала позиционные, потом именованные)\ninfo('Анна', city='Москва', age=25)\n```\n\n🔁 *Рекурсия (функция вызывает себя):*\n```python\n# Факториал через рекурсию\ndef factorial(n):\n    if n <= 1:\n        return 1\n    else:\n        return n * factorial(n - 1)\n\nprint(factorial(5))  # 120 (5×4×3×2×1)\n\n# Фибоначчи через рекурсию\ndef fibonacci(n):\n    if n <= 1:\n        return n\n    else:\n        return fibonacci(n-1) + fibonacci(n-2)\n\nprint(fibonacci(10))  # 55\n```\n\n💡 *Область видимости переменных:*\n```python\n# Глобальная переменная\nglobal_var = 'Я глобальная'\n\ndef my_func():\n    # Локальная переменная\n    local_var = 'Я локальная'\n    print(global_var)  # можно прочитать\n    print(local_var)   # можно\n\nmy_func()\nprint(global_var)  # можно\n# print(local_var)   # ❌ Ошибка: local_var не существует здесь\n\n# Изменение глобальной переменной внутри функции\ncounter = 0\n\ndef increment():\n    global counter  # обязательно указать global\n    counter += 1\n\nincrement()\nprint(counter)  # 1\n```\n\n📚 *Документирование функций (docstring):*\n```python\ndef multiply(a, b):\n    \"\"\"\n    Умножает два числа и возвращает результат.\n    \n    Args:\n        a: первое число\n        b: второе число\n    \n    Returns:\n        произведение a и b\n    \n    Пример:\n        >>> multiply(3, 4)\n        12\n    \"\"\"\n    return a * b\n\n# Помощь по функции\nprint(multiply.__doc__)\n```\n\n🔢 *Произвольное количество аргументов:*\n```python\n# *args - кортеж (произвольное количество позиционных аргументов)\ndef sum_all(*args):\n    return sum(args)\n\nprint(sum_all(1, 2, 3, 4, 5))  # 15\nprint(sum_all(10, 20))          # 30\n\n# **kwargs - словарь (произвольное количество именованных аргументов)\ndef print_info(**kwargs):\n    for key, value in kwargs.items():\n        print(f'{key}: {value}')\n\nprint_info(name='Анна', age=25, city='Москва')\n\n# Комбинирование\ndef func(a, b, *args, **kwargs):\n    print(f'a={a}, b={b}')\n    print(f'args: {args}')\n    print(f'kwargs: {kwargs}')\n\nfunc(1, 2, 3, 4, 5, x=10, y=20)\n```\n\n🎯 *Практические примеры:*\n```python\n# Конвертер температур\ndef celsius_to_fahrenheit(celsius):\n    return celsius * 9/5 + 32\n\nprint(celsius_to_fahrenheit(25))  # 77.0\n\n# Проверка пароля\ndef is_strong_password(password):\n    return len(password) >= 8 and any(c.isdigit() for c in password)\n\nprint(is_strong_password('pass1234'))  # True\n\n# Площадь фигур\ndef area_circle(radius):\n    return 3.14159 * radius ** 2\n\ndef area_rectangle(width, height):\n    return width * height\n\ndef area_triangle(base, height):\n    return 0.5 * base * height\n\nprint(area_circle(5))        # 78.53975\nprint(area_rectangle(4, 6))  # 24\nprint(area_triangle(5, 3))   # 7.5\n\n# Проверка палиндрома\ndef is_palindrome(word):\n    word = word.lower().replace(' ', '')\n    return word == word[::-1]\n\nprint(is_palindrome('казак'))     # True\nprint(is_palindrome('А роза упала на лапу Азора'))  # True\n\n# Функция для нахождения НОД (алгоритм Евклида)\ndef gcd(a, b):\n    while b != 0:\n        a, b = b, a % b\n    return a\n\nprint(gcd(48, 18))  # 6\n\n# Функция для проверки простого числа\ndef is_prime(n):\n    if n < 2:\n        return False\n    for i in range(2, int(n**0.5) + 1):\n        if n % i == 0:\n            return False\n    return True\n\nprint(is_prime(17))  # True\nprint(is_prime(20))  # False\n```\n\n💡 *Лямбда-функции (анонимные функции):*\n```python\n# Обычная функция\ndef square(x):\n    return x ** 2\n\n# Лямбда-функция\nsquare = lambda x: x ** 2\n\nprint(square(5))  # 25\n\n# Использование со списками\nnumbers = [1, 2, 3, 4, 5]\ndoubled = list(map(lambda x: x * 2, numbers))  # [2, 4, 6, 8, 10]\nevens = list(filter(lambda x: x % 2 == 0, numbers))  # [2, 4]\n\n# Сортировка по ключу\nusers = [\n    {'name': 'Анна', 'age': 25},\n    {'name': 'Петр', 'age': 30},\n    {'name': 'Мария', 'age': 20}\n]\nsorted_by_age = sorted(users, key=lambda x: x['age'])\nprint(sorted_by_age)\n```\n\n⚠️ *Ошибки начинающих:*\n```python\n# ❌ Забыли return\ndef add(a, b):\n    a + b  # нет return\n\nresult = add(3, 5)\nprint(result)  # None\n\n# ❌ Изменение глобальной переменной без global\ncounter = 0\ndef increment():\n    counter += 1  # UnboundLocalError!\n\n# ✅ Правильно\ndef increment():\n    global counter\n    counter += 1\n\n# ❌ Мутабельные значения по умолчанию\ndef add_item(item, lst=[]):  # ОПАСНО!\n    lst.append(item)\n    return lst\n\nprint(add_item(1))  # [1]\nprint(add_item(2))  # [1, 2] - неожиданно!\n\n# ✅ Правильно\ndef add_item(item, lst=None):\n    if lst is None:\n        lst = []\n    lst.append(item)\n    return lst\n\nprint(add_item(1))  # [1]\nprint(add_item(2))  # [2]\n```",
+      "tasks": [
+        "Создай функцию `greet()`, которая выводит 'Привет, мир!'.",
+        "Создай функцию `greet_name(name)`, которая выводит 'Привет, {name}!'.",
+        "Создай функцию `add(a, b)`, которая возвращает сумму двух чисел.",
+        "Создай функцию `is_even(num)`, которая возвращает `True` если число чётное, иначе `False`.",
+        "Создай функцию `max_of_two(a, b)`, которая возвращает большее из двух чисел.",
+        "Создай функцию `max_of_three(a, b, c)`, которая возвращает наибольшее из трёх чисел.",
+        "Создай функцию `factorial(n)`, которая вычисляет факториал числа.",
+        "Создай функцию `is_palindrome(word)`, которая проверяет, читается ли слово одинаково слева и справа.",
+        "Создай функцию `count_vowels(text)`, которая возвращает количество гласных букв в строке.",
+        "Создай функцию `reverse_string(text)`, которая возвращает перевёрнутую строку.",
+        "Создай функцию `is_prime(n)`, которая проверяет, является ли число простым.",
+        "Создай функцию `fibonacci(n)`, которая возвращает n-е число Фибоначчи.",
+        "Создай функцию `gcd(a, b)`, которая находит наибольший общий делитель.",
+        "Создай функцию `square_list(numbers)`, которая принимает список и возвращает список квадратов.",
+        "Создай функцию `filter_even(numbers)`, которая возвращает только чётные числа из списка.",
+        "Создай функцию `average(numbers)`, которая находит среднее арифметическое списка.",
+        "Создай функцию `celsius_to_fahrenheit(celsius)`, которая переводит градусы Цельсия в Фаренгейты.",
+        "Создай функцию `count_words(text)`, которая возвращает количество слов в строке.",
+        "Создай функцию `unique_elements(lst)`, которая возвращает список уникальных элементов.",
+        "Создай функцию `merge_dicts(dict1, dict2)`, которая объединяет два словаря."
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "question": "Какой оператор используется для вывода на экран?",
+      "options": ["input()", "print()", "console.log()", "echo"],
+      "correct": 1
+    },
+    {
+      "question": "Какой тип данных у переменной x = 3.14?",
+      "options": ["int", "str", "float", "bool"],
+      "correct": 2
+    },
+    {
+      "question": "Какой оператор проверяет равенство?",
+      "options": ["=", "==", "!=", "==="],
+      "correct": 1
+    },
+    {
+      "question": "Что выведет print(5 % 2)?",
+      "options": ["2", "2.5", "1", "0"],
+      "correct": 2
+    },
+    {
+      "question": "Как создать список в Python?",
+      "options": ["{}", "[]", "()", "<>"],
+      "correct": 1
+    },
+    {
+      "question": "Как получить длину списка?",
+      "options": ["list.length()", "len(list)", "list.size()", "count(list)"],
+      "correct": 1
+    },
+    {
+      "question": "Что делает функция range(5)?",
+      "options": ["[1,2,3,4,5]", "[0,1,2,3,4]", "[0,1,2,3,4,5]", "[1,2,3,4]"],
+      "correct": 1
+    },
+    {
+      "question": "Какой цикл используется когда известно количество повторений?",
+      "options": ["while", "for", "do-while", "repeat"],
+      "correct": 1
+    },
+    {
+      "question": "Как создать словарь?",
+      "options": ["[]", "()", "{}", "<>"],
+      "correct": 2
+    },
+    {
+      "question": "Что вернёт функция без return?",
+      "options": ["0", "null", "undefined", "None"],
+      "correct": 3
+    }
+  ]
+}
